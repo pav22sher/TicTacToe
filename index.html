@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>My first Vue app</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="main" align="center">
+      <div class="status">
+        <template v-if="gameover">
+          <i>
+            Win player(s): {{ winplayer }}
+          </i>
+        </template>
+        <template v-else>
+          <i> Player: {{ player }} </i>
+        </template>
+      </div>
+      <table>
+        <tr>
+          <td>
+            <box
+              v-for="id in [1,2,3]"
+              :id="id"
+              :key="id"
+              v-on:click.native="move"
+              class="box btn btn-info"
+              :style="{ background: '#808080'}"
+            ></box>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <box
+              v-for="id in [4,5,6]"
+              :id="id"
+              :key="id"
+              v-on:click.native="move"
+              class="box btn btn-info"
+              :style="{ background: '#808080'}"
+            ></box>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <box
+              v-for="id in [7,8,9]"
+              :id="id"
+              :key="id"
+              @click.native="move"
+              class="box btn btn-info"
+              :style="{ background: '#808080'}"
+            ></box>
+          </td>
+        </tr>
+      </table>
+
+      <input type="button" @click="restart" value="Restart" class="restart" />
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

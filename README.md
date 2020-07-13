@@ -1,2 +1,3 @@
-# TicTacToe
-Created with CodeSandbox
+# TicTacToeVue
+
+Create a TIC-TAC-toe game using VueJS!
